@@ -74,8 +74,14 @@ export const constantRoutes = [
       {
         path: 'user',
         name: 'User',
-        component: () => import('@/views/userManger/user/index'),
+        component: () => import('@/views/userManger/user/indexuser'),
         meta: { title: '用户管理', icon: 'table' }
+      },
+      {
+        path: 'userinfo',
+        name: 'Userinfo',
+        component: () => import('@/views/userManger/user/userInfo'),
+        meta: { title: '用户信息', icon: 'table' }
       },
       {
         path: 'orderManger',
