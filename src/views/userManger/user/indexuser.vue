@@ -36,45 +36,55 @@
           <el-table-column
             type="selection"
             width="50"
+            align="center"
           />
           <el-table-column
             prop="date"
             label="ID"
             width="180"
+            align="center"
           />
           <el-table-column
             prop="name"
             label="邮箱"
             width="180"
+            align="center"
           />
           <el-table-column
             prop="name"
             width="180"
             label="用户名"
+            align="center"
           />
           <el-table-column
             prop="name"
             label="注册IP"
+            align="center"
           />
           <el-table-column
             prop="name"
             label="注册时间"
+            align="center"
           />
           <el-table-column
             prop="name"
             label="上次登陆时间"
+            align="center"
           />
           <el-table-column
             prop="name"
             label="用户状态"
+            align="center"
           />
           <el-table-column
             prop="state"
             label="账号状态"
+            align="center"
           />
           <el-table-column
             fixed="right"
             label="操作"
+            align="center"
             width="100"
           >
             <template slot-scope="scope">
