@@ -1,0 +1,16 @@
+{
+  "id": "1543609",
+  "name": "myapp",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "845783",
+      "name": "钱",
+      "font_class": "qian",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    }
+  ]
+}

@@ -116,6 +116,12 @@ export const constantRoutes = [
         meta: { title: '流量包管理', icon: 'table' }
       },
       {
+        path: 'flowEditor',
+        name: 'FlowEditor',
+        component: () => import('@/views/userManger/flowPacket/flowEditor'),
+        meta: { title: '流量包编辑', icon: 'table' }
+      },
+      {
         path: 'coupon',
         name: 'Coupon',
         component: () => import('@/views/userManger/coupon/index'),

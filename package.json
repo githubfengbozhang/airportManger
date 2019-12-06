@@ -15,6 +15,7 @@
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml"
   },
   "dependencies": {
+    "antd": "^3.26.0",
     "axios": "0.18.1",
     "echarts": "^4.5.0",
     "echarts-gl": "^1.1.1",
