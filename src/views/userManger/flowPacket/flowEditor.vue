@@ -15,27 +15,26 @@
         <el-col :span="12">
           <p>状态</p>
           <el-switch
-            width="50"
             v-model="value1"
+            width="50"
             active-text="上架"
-            inactive-text="下架">
-          </el-switch>
+            inactive-text="下架"
+          />
         </el-col>
       </el-row>
       <el-row>
-         <el-col :span="24">
-           <p>选择类型</p>
-           <el-button type="primary">流量</el-button>
-         </el-col>
+        <el-col :span="24">
+          <p>选择类型</p>
+          <el-button type="primary">流量</el-button>
+        </el-col>
       </el-row>
       <el-row>
-         <el-col :span="4">
-           <p>流量设置</p>
-           <el-input type="number"  v-model="text" placeholder=""></el-input>
-           <span>GB/月</span>
-         </el-col>
-         <el-col :span="4">
-         </el-col>
+        <el-col :span="4">
+          <p>流量设置</p>
+          <el-input v-model="text" type="number" placeholder="" />
+          <span>GB/月</span>
+        </el-col>
+        <el-col :span="4" />
       </el-row>
     </div>
     <div class="message">
@@ -108,7 +107,7 @@ export default {
   border-radius: 4px;
 
 }
-.message{ 
+.message{
   width: 40%;
   margin-top: 60px;
 }

@@ -18,15 +18,15 @@
       </el-row>
     </div>
     <div class="app-body clearfix">
-      
-     <el-row class="row-bg" >
-        <el-col :span="6" class="box-1" >
+
+      <el-row class="row-bg">
+        <el-col :span="6" class="box-1">
           <div @click="handleClick(e)"><span>+ 新增产品</span></div>
         </el-col>
-        <el-col :span="6" class="box-2" v-for="o in 7">
-          <el-card class="box-card" >
+        <el-col v-for="(item, index) in facadeList" :key="index" :span="6" class="box-2">
+          <el-card class="box-card">
             <div class="box-2-1">
-              <div class="imgs"><i class="el-icon-picture"></i></div>
+              <div class="imgs"><i class="el-icon-picture" /></div>
             </div>
             <div class="box-2-2">
               <h4>回国流量包<span style="margin-left: 20px;">32G</span></h4>
@@ -49,45 +49,58 @@
         <span>共计：1111</span>
       </div>
       <div class="page">
-        <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage2"
-          :page-sizes="[100, 200, 300, 400]" :page-size="100" background layout="sizes, prev, pager, next" :total="1000">
-        </el-pagination>
+        <el-pagination
+          :current-page.sync="currentPage2"
+          :page-sizes="[100, 200, 300, 400]"
+          :page-size="100"
+          background
+          layout="sizes, prev, pager, next"
+          :total="1000"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
       </div>
     </div>
   </div>
 </template>
 <script>
-  // import { backapplyList } from '@/api/userManger'
-  // import waves from '@/directive/waves'
-  // import Pagination from '@/components/Pagination'
-  // import { parseTime } from '@/utils'
+import { facade } from '@api/manger/facade'
+// import waves from '@/directive/waves'
+// import Pagination from '@/components/Pagination'
+// import { parseTime } from '@/utils'
 
-  export default {
-    data() {
-      return {
-        multipleSelection: [],
-        input2: '',
-        test:[{name:1},{name:2},{name:3}]
-      }
-    },
-    created: {},
-    methods: {
-      handleClick(row) {
-        console.log(row)
-        var id = '123'
-        this.$router.push({
-          name: 'Userinfo',
-          params: {
-            id: id
-          }
-        })
-      }
-
-    },
-    colorChange(e) {
-      // for(let i=0;i<)
+export default {
+  data() {
+    return {
+      multipleSelection: [],
+      input2: '',
+      test: [{ name: 1 }, { name: 2 }, { name: 3 }],
+      facadeList: []
     }
+  },
+  created() {
+    this.getFacadeList()
+  },
+  methods: {
+    getFacadeList() {
+      facade()
+        .then((data) => {
+          const { list } = data.object
+          this.facadeList = list
+        })
+    },
+    handleClick(row) {
+      console.log(row)
+      this.$router.push({
+        name: 'AddFlowPacket'
+      })
+    }
+
+  },
+  colorChange(e) {
+    // for(let i=0;i<)
   }
+}
 </script>
 <style lang="scss" scoped>
    .app-container{

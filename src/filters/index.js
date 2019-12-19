@@ -67,6 +67,6 @@ export function uppercaseFirst(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export function money(num){
-  return num.append("￥")
+export function money(num) {
+  return num.append('￥')
 }

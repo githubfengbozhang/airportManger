@@ -23,10 +23,10 @@
     </div>
     <div class="totals clearfix">
       <ul>
-        <li>订单：<span>{{oderdata.ordernum}}</span></li>
-        <li>成交订单：<span>{{oderdata.complete}}</span></li>
-        <li>成交金额:￥<span>{{oderdata.money}}</span></li>
-        <li>订单金额:￥<span>{{oderdata.ordermoney}}</span></li>
+        <li>订单：<span>{{ oderdata.ordernum }}</span></li>
+        <li>成交订单：<span>{{ oderdata.complete }}</span></li>
+        <li>成交金额:￥<span>{{ oderdata.money }}</span></li>
+        <li>订单金额:￥<span>{{ oderdata.ordermoney }}</span></li>
       </ul>
     </div>
     <div class="app-body">
@@ -117,16 +117,15 @@
         <span>共计：1111</span>
       </div>
       <div class="page">
-          <el-pagination
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
-            :current-page.sync="currentPage2"
-            :page-sizes="[100, 200, 300, 400]"
-            :page-size="100"
-            layout="sizes, prev, pager, next"
-            :total="1000">
-          </el-pagination>
-        </div>
+        <el-pagination
+          :current-page.sync="currentPage2"
+          :page-sizes="[100, 200, 300, 400]"
+          :page-size="100"
+          layout="sizes, prev, pager, next"
+          :total="1000"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
       </div>
     </div>
   </div>
@@ -176,7 +175,7 @@ export default {
         zip: 200333,
         checked: true
       }],
-      oderdata:{ordernum:121,complete:121,money:10000.00,ordermoney:10000.00},
+      oderdata: { ordernum: 121, complete: 121, money: 10000.00, ordermoney: 10000.00 },
       multipleSelection: [],
       input2: ''
     }

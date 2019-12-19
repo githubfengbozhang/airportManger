@@ -80,7 +80,7 @@ export const constantRoutes = [
       {
         path: 'userinfo',
         name: 'Userinfo',
-        hidden:true,
+        hidden: true,
         component: () => import('@/views/userManger/user/userInfo'),
         meta: { title: '用户信息', icon: 'table' }
       },
@@ -93,7 +93,7 @@ export const constantRoutes = [
       {
         path: 'orderInfo',
         name: 'OrderInfo',
-        hidden:true,
+        hidden: true,
         component: () => import('@/views/userManger/orderManger/orderInfo'),
         meta: { title: '订单信息', icon: 'table' }
       },
@@ -120,6 +120,12 @@ export const constantRoutes = [
         name: 'FlowEditor',
         component: () => import('@/views/userManger/flowPacket/flowEditor'),
         meta: { title: '流量包编辑', icon: 'table' }
+      },
+      {
+        path: 'addFlowPacket',
+        name: 'AddFlowPacket',
+        component: () => import('@/views/userManger/flowPacket/addFlowPacket'),
+        meta: { title: '新增流量包', icon: 'table' }
       },
       {
         path: 'coupon',

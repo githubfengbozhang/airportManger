@@ -35,28 +35,28 @@
               <div class="send">
                 <el-button>赠送</el-button>
               </div>
-              <div v-for="(item,i) in userSer">
+              <div v-for="(item,i) in userSer" :key="i">
                 <div class="userlist">
                   <div class="list clearfix">
                     <ul>
-                      <li><p>服务：{{item.name}}</p></li>
-                      <li><p>有效期：{{item.endtime}}</p></li>
+                      <li><p>服务：{{ item.name }}</p></li>
+                      <li><p>有效期：{{ item.endtime }}</p></li>
                     </ul>
                   </div>
                   <div class="details">
-                      <p>本月流量使用情况：<span>{{item.startime}}</span>~<span>{{item.endtime}}</span></p>
-                      <div class="progressbar">
-                          <div class="barname">套餐(32G)</div>
-                          <div class="bar"> <el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress></div>
-                          <div class="baruse">4GB13.87M/32GB</div>
-                       </div>
-                       <div class="progressbar">
-                           <div class="barname">套餐(32G)</div>
-                           <div class="bar"> <el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress></div>
-                           <div class="baruse">4GB13.87M/32GB</div>
-                        </div>
+                    <p>本月流量使用情况：<span>{{ item.startime }}</span>~<span>{{ item.endtime }}</span></p>
+                    <div class="progressbar">
+                      <div class="barname">套餐(32G)</div>
+                      <div class="bar"> <el-progress :text-inside="true" :stroke-width="26" :percentage="70" /></div>
+                      <div class="baruse">4GB13.87M/32GB</div>
+                    </div>
+                    <div class="progressbar">
+                      <div class="barname">套餐(32G)</div>
+                      <div class="bar"> <el-progress :text-inside="true" :stroke-width="26" :percentage="70" /></div>
+                      <div class="baruse">4GB13.87M/32GB</div>
+                    </div>
                   </div>
-                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -111,97 +111,95 @@
               </el-table-column>
             </el-table>
             <div class="block">
-                <el-pagination
-                  @size-change="handleSizeChange"
-                  @current-change="handleCurrentChange"
-                  :current-page.sync="currentPage2"
-                  :page-sizes="[100, 200, 300, 400]"
-                  :page-size="100"
-                  layout="sizes, prev, pager, next"
-                  :total="1000">
-                </el-pagination>
-              </div>
+              <el-pagination
+                :current-page.sync="currentPage2"
+                :page-sizes="[100, 200, 300, 400]"
+                :page-size="100"
+                layout="sizes, prev, pager, next"
+                :total="1000"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+              />
+            </div>
           </div>
         </el-tab-pane>
         <el-tab-pane label="用户日志" name="third">
           <div class="log">
-          <el-table
+            <el-table
               :data="tableData"
               border
-              style="width: 100%">
+              style="width: 100%"
+            >
               <el-table-column
                 prop="date"
                 label="时间"
-               >
-              </el-table-column>
+              />
               <el-table-column
                 prop="name"
                 label="IP"
-                >
-              </el-table-column>
+              />
               <el-table-column
                 prop="address"
-                label="动作">
-              </el-table-column>
+                label="动作"
+              />
               <el-table-column
                 prop="address"
-                label="操作人">
-              </el-table-column>
+                label="操作人"
+              />
             </el-table>
             <div class="block2">
-                <el-pagination
-                  @size-change="handleSizeChange"
-                  @current-change="handleCurrentChange"
-                  :current-page.sync="currentPage2"
-                  :page-sizes="[100, 200, 300, 400]"
-                  :page-size="100"
-                  layout="sizes, prev, pager, next"
-                  :total="1000">
-                </el-pagination>
-              </div>
-             </div>
+              <el-pagination
+                :current-page.sync="currentPage2"
+                :page-sizes="[100, 200, 300, 400]"
+                :page-size="100"
+                layout="sizes, prev, pager, next"
+                :total="1000"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+              />
+            </div>
+          </div>
         </el-tab-pane>
         <el-tab-pane label="用户邀请" name="fourth">
           <div class="userinv">
-          <el-table
+            <el-table
               :data="tableData"
               border
-              style="width: 100%">
+              style="width: 100%"
+            >
               <el-table-column
                 prop="date"
                 label="邀请用户"
-               >
-              </el-table-column>
+              />
               <el-table-column
                 prop="name"
                 label="注册时间"
-                >
-              </el-table-column>
+              />
               <el-table-column
                 prop="address"
-                label="购买套餐">
-              </el-table-column>
+                label="购买套餐"
+              />
               <el-table-column
                 prop="address"
-                label="激活时间">
-              </el-table-column>
+                label="激活时间"
+              />
               <el-table-column
                 prop="address"
-                label="状态">
-              </el-table-column>
+                label="状态"
+              />
             </el-table>
             <div class="block3">
-                <el-pagination
-                  @size-change="handleSizeChange"
-                  @current-change="handleCurrentChange"
-                  :current-page.sync="currentPage2"
-                  :page-sizes="[100, 200, 300, 400]"
-                  :page-size="100"
-                  layout="sizes, prev, pager, next"
-                  :total="1000">
-                </el-pagination>
-              </div>
-              </div>
+              <el-pagination
+                :current-page.sync="currentPage2"
+                :page-sizes="[100, 200, 300, 400]"
+                :page-size="100"
+                layout="sizes, prev, pager, next"
+                :total="1000"
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+              />
+            </div>
+          </div>
         </el-tab-pane>
       </el-tabs>
     </div>
@@ -217,27 +215,27 @@ export default {
   data() {
     return {
       tableData: [{
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-              }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1517 弄'
-              }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1519 弄'
-              }, {
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1516 弄'
-              }],
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1517 弄'
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1519 弄'
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1516 弄'
+      }],
       customColor: '#409eff',
       activeName: 'first',
       userData: { id: 1, username: 'user1', email: '1235@qq.com', state: '有效', userstate: '已激活', times: '2019-06-15 22:48:47', ip: '12.200.230.122' },
-      userSer:[{id:1,name:"回国流量包",startime:"2019-06-15 22:48:47",endtime:"2019-06-15 22:48:47",combo:"32G",addp:"10G",combouse:"4G",addpu:"4G",money:'￥10'},
-               {id:2,name:"回国流量包32*一年",startime:"2019-06-15 22:48:47",endtime:"2019-06-15 22:48:47",combo:"32G",addp:"10G",combouse:"4G",addpu:"4G",money:'￥10'}]
+      userSer: [{ id: 1, name: '回国流量包', startime: '2019-06-15 22:48:47', endtime: '2019-06-15 22:48:47', combo: '32G', addp: '10G', combouse: '4G', addpu: '4G', money: '￥10' },
+        { id: 2, name: '回国流量包32*一年', startime: '2019-06-15 22:48:47', endtime: '2019-06-15 22:48:47', combo: '32G', addp: '10G', combouse: '4G', addpu: '4G', money: '￥10' }]
     }
   },
   mounted() {
